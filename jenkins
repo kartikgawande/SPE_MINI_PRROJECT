@@ -27,7 +27,7 @@ pipeline {
         stage('Building a Docker Image') {
             steps {
                 script {
-                    imageName = docker.build("ajay4gidd/calcy:mini")
+                    imageName = docker.build("ajay4gidd/spe-mini-pro")
                 }
             }
         }
