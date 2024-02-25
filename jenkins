@@ -23,46 +23,35 @@ pipeline {
                 }
             }
         }
+ 
+        // stage('Building a Docker Image') {
+        //     steps {
+        //         script {
+        //             imageName = docker.build("ajay4gidd/calcy:mini")
+        //         }
+        //     }
+        // }
         
-       
+        // stage('Push The Docker Image') {
+        //     steps {
+        //         script {
+        //           withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
+        //             imageName.push()
+        //             }
+        //         }
+        //     }
+        // }
         
-        stage('Building a Docker Image') {
-            steps {
-                script {
-                    imageName = docker.build("ajay4gidd/calcy:mini")
-                }
-            }
-        }
-        
-        stage('Push The Docker Image') {
-            steps {
-                script {
-                   withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
-                    imageName.push()
-                    }
-                }
-            }
-        }
-        
-        stage('Ansible Pull Docker Image') {
-    steps {
-        ansiblePlaybook becomeUser: null,
-                        colorized: true,
-                        disableHostKeyChecking: true,
-                        installation: 'Ansible',
-                        inventory: 'Ansible/inventory.ini',
-                        playbook: 'Ansible/playbook.yml',
-                        sudoUser: null
-    }
-}
-        
-
-        
-
-       
-        
-        
-
-        
+        // stage('Ansible Pull Docker Image') {
+        //     steps {
+        //         ansiblePlaybook becomeUser: null,
+        //                         colorized: true,
+        //                         disableHostKeyChecking: true,
+        //                         installation: 'Ansible',
+        //                         inventory: 'Ansible/inventory.ini',
+        //                         playbook: 'Ansible/playbook.yml',
+        //                         sudoUser: null
+        //     }
+        // }
     }
 }
