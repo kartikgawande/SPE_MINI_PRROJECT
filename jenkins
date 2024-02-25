@@ -11,7 +11,7 @@ pipeline {
         stage('Git Pull') {
             steps {
                 git credentialsId: GITHUB_CREDENTIALS,
-                 url: 'https://github.com/ajay-gidd/SPE_MINI_PROJECT.git'
+                 url: 'https://github.com/kartikgawande/SPE_MINI_PRROJECT.git'
                 
                 
             }
@@ -27,7 +27,7 @@ pipeline {
         stage('Building a Docker Image') {
             steps {
                 script {
-                    imageName = docker.build("ajay4gidd/spe-mini-pro")
+                    imageName = docker.build("kartikgawande/spe-mini-pro")
                 }
             }
         }
