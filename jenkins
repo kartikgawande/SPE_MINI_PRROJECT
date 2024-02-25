@@ -32,15 +32,15 @@ pipeline {
             }
         }
         
-        // stage('Push The Docker Image') {
-        //     steps {
-        //         script {
-        //           withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
-        //             imageName.push()
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Push The Docker Image') {
+            steps {
+                script {
+                  withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
+                    imageName.push()
+                    }
+                }
+            }
+        }
         
         // stage('Ansible Pull Docker Image') {
         //     steps {
