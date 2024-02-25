@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         GITHUB_CREDENTIALS = credentials("github_cred")
+        DOCKER_CREDENTIALS = credentials("docker-hub-credentials")
     }
     triggers {
         githubPush()
@@ -35,7 +36,7 @@ pipeline {
         stage('Push The Docker Image') {
             steps {
                 script {
-                  withDockerRegistry([ credentialsId:credentials("docker-hub-credentials"), url: "" ]) {
+                  withDockerRegistry([ credentialsId: DOCKER_CREDENTIALS"), url: "" ]) {
                     imageName.push()
                     }
                 }
