@@ -9,7 +9,6 @@
   <version>1</version>
 
   <build>
-        <finalName>Calculator</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -21,6 +20,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
+                            <finalName>Calculator</finalName>
                             <archive>
                                 <manifest>
                                     <mainClass>com.example.App</mainClass>
