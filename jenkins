@@ -19,8 +19,8 @@ pipeline {
         stage('Git Pull') {
             steps {
                 git credentialsId: GITHUB_CREDENTIALS,
-                 url: 'https://github.com/kartikgawande/SPE_MINI_PRROJECT.git'
-                
+                url: 'https://github.com/kartikgawande/SPE_MINI_PRROJECT.git',
+                branch: 'main'
                 
             }
         }
